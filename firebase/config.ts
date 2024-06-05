@@ -8,15 +8,15 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBxehbfHXTeT-B4esDIPwq1QG-UwIu9JKo",
+  apiKey: process.env.GOOGLE_API_KEY,
   authDomain: "chat-application-64f63.firebaseapp.com",
-  projectId: "chat-application-64f63",
+  projectId: process.env.PROJECT_ID,
   storageBucket: "chat-application-64f63.appspot.com",
   messagingSenderId: "850183137869",
   appId: "1:850183137869:web:952f736706ab4214bb0a04",
   measurementId: "G-RBNTKVGQZS",
 };
-
+console.log(process.env.GOOGLE_API_KEY);
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
