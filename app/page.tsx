@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Modal from 'react-modal';
 import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
-import { db } from "../firebase/config"
+import { db } from "../firebase"
 
 const customStyles = {
   content: {
