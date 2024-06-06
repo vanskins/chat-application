@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Modal from 'react-modal';
 import data from '@emoji-mart/data'
 import Picker from '@emoji-mart/react'
-import { db } from "../firebase"
+import { db } from "./firebase"
 
 const customStyles = {
   content: {
@@ -94,6 +94,7 @@ export default function Home() {
     <div className="container mx-auto grid justify-items-center ">
       <h1 className="text-center text-3xl font-bold pt-20">Chat Application</h1>
       <p>Created by: Van Alfred</p>
+      <p>version: 0.0.1</p>
       <div className="chat-container w-full p-20">
         {
           username.length === 0 && <button className="text-blue-400 font-bold" onClick={openModal}>Set username</button>
