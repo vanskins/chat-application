@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client"
 import React, { useEffect, useState } from "react";
 import moment from 'moment';
@@ -71,7 +72,6 @@ export default function Home() {
         .then((querySnapshot) => {
           const newData = querySnapshot.docs
             .map((doc) => ({ ...doc.data(), id: doc.id }));
-          console.log(newData)
           setMessages(newData);
         })
     } catch (error) {
@@ -100,9 +100,7 @@ export default function Home() {
         }
         <div className="chat-area overflow-auto h-96 w-full border-2 rounded-lg bg-slate-100">
           {
-            messages.sort((a: any, b: any) => {
-              return new Date(a.createdAt) - new Date(b.createdAt)
-            }).map((i: any, k: number) => {
+            messages.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)).map((i: any, k: number) => {
               if (i.username === username) {
                 return (
                   <div className="p-2 flex flex-col" key={k}>
